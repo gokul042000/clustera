@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Case Studies - Clustera</title>
+    <link rel="icon" type="image/png" href="/assets/clustera/images/clustera-logo.png">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+    <link rel="stylesheet" href="assets/clustera/css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        .case-studies-hero {
+            font-family: 'Inter', sans-serif;
+            min-height: 100vh;
+            position: relative;
+            overflow: hidden;
+            background-color: #000;
+            display: flex;
+            align-items: center;
+            opacity: 0;
+            animation: fadeInHero 1s ease-out forwards;
+        }
+
+        @keyframes fadeInHero {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .case-studies-hero .container {
+            width: 100%;
+            padding-top: 0rem;
+        }
+
+        .case-studies-hero .hero-content {
+            position: relative;
+            z-index: 2;
+            padding: 0 2rem;
+            padding-top: 5rem !important;
+        }
+
+        .case-studies-hero .hero-title {
+            font-size: 5.5rem;
+            font-weight: 600;
+            letter-spacing: -0.03em;
+            line-height: 1;
+            margin-bottom: 2rem;
+            max-width: 1200px;
+            margin-left: auto;
+            margin-right: auto;
+            color: #fff;
+        }
+
+        .case-studies-hero .highlight {
+            color: #fff;
+            font-style: italic;
+        }
+
+        .case-studies-hero .hero-subtitle {
+            font-size: 1.15rem;
+            line-height: 1.6;
+            max-width: 800px;
+            opacity: 0.8;
+            margin: 0 auto 3.5rem;
+            font-weight: 400;
+            color: #fff;
+        }
+
+        .scroll-indicator {
+            position: relative;
+            z-index: 2;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .scroll-text {
+            color: #fff;
+            font-size: 0.875rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 1rem;
+            opacity: 0.9;
+            font-weight: 500;
+            position: relative;
+        }
+
+        .scroll-text::before,
+        .scroll-text::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            width: 30px;
+            height: 1px;
+            background: rgba(255, 255, 255, 0.3);
+        }
+
+        .scroll-text::before {
+            right: calc(100% + 20px);
+        }
+
+        .scroll-text::after {
+            left: calc(100% + 20px);
+        }
+
+        .scroll-line {
+            width: 1px;
+            height: 80px;
+            background: rgba(255, 255, 255, 0.2);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .scroll-line-inner {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: #fff;
+            animation: scrollLine 2.5s ease-in-out infinite;
+            transform-origin: top;
+        }
+
+        @keyframes scrollLine {
+            0% {
+                transform: scaleY(0);
+                transform-origin: top;
+            }
+            50% {
+                transform: scaleY(1);
+                transform-origin: top;
+            }
+            50.1% {
+                transform-origin: bottom;
+            }
+            100% {
+                transform: scaleY(0);
+                transform-origin: bottom;
+            }
+        }
+        
+        @media (max-width: 1400px) {
+            .case-studies-hero .hero-title {
+                font-size: 4.5rem;
+            }
+            .case-studies-hero .hero-subtitle {
+                max-width: 700px;
+            }
+        }
+        
+        @media (max-width: 992px) {
+            .case-studies-hero .hero-content {
+                padding-top: 4rem !important;
+            }
+            .case-studies-hero .hero-title {
+                font-size: 3.5rem;
+            }
+            .case-studies-hero .hero-subtitle {
+                font-size: 1.1rem;
+                max-width: 600px;
+                margin-bottom: 3rem;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .case-studies-hero .hero-content {
+                padding-top: 3.5rem !important;
+            }
+            .case-studies-hero .hero-title {
+                font-size: 2.75rem;
+            }
+            .case-studies-hero .hero-subtitle {
+                font-size: 1rem;
+                margin-bottom: 2.5rem;
+            }
+            .scroll-line {
+                height: 60px;
+            }
+            .scroll-text::before,
+            .scroll-text::after {
+                width: 20px;
+            }
+        }
+
+        /* Override footer styles for case studies page */
+        .footer {
+            background-color: #000 !important;
+            color: #fff !important;
+        }
+
+        .footer a {
+            color: rgba(255, 255, 255, 0.7) !important;
+        }
+
+        .footer a:hover {
+            color: #fff !important;
+        }
+
+        .footer h4 {
+            color: #fff !important;
+        }
+
+        .footer p {
+            color: rgba(255, 255, 255, 0.7) !important;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.1) !important;
+        }
+    </style>
+</head>
+<body class="dark-theme">
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg fixed-top navbar-dark">
+        <div class="container">
+            <a class="navbar-brand d-flex align-items-center" href="index.html">
+                <img src="/assets/clustera/images/Clustera logo - White.png" alt="Clustera Logo" class="navbar-logo me-2">
+                <span></span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html#home">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="index.html#about">About Us</a></li>
+                    <li class="nav-item"><a class="nav-link" href="index.html#services">Solutions</a></li>
+                    <li class="nav-item active"><a class="nav-link" href="case-studies.html">Case Studies</a></li>
+                    <li class="nav-item"><a class="nav-link" href="index.html#contact">Contact Us</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="case-studies-hero">
+        <div class="texture-overlay"></div>
+        <div class="container">
+            <div class="hero-content text-center" style="padding-top: 5rem;">
+                <h1 class="hero-title">
+                    <span><span class="highlight">Good Stories</span> that we are</span>
+                    <span>proud to share</span>
+                </h1>
+                <p class="hero-subtitle">At Clustera, we help brands tap into this powerful audience through strategic offline activations and data-driven insights. Explore our case studies to see how we've helped brands successfully engage and convert India's next generation of consumers.</p>
+                <div class="scroll-indicator">
+                    <span class="scroll-text">Explore Case Studies</span>
+                    <div class="scroll-line">
+                        <div class="scroll-line-inner"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    
+
+    <!-- Case Studies Grid -->
+    <section class="case-studies-grid">
+        <div class="container">
+            <div class="row g-4">
+                <!-- Case Study 1 -->
+                <div class="col-lg-3 col-md-6" data-aos="fade-up">
+                    <div class="case-study-card">
+                        <div class="case-study-image">
+                            <img src="/assets/clustera/images/case-study-1.jpg" alt="AI Field Mechanic">
+                            <div class="case-study-overlay">
+                                
+                            </div>
+                        </div>
+                        <div class="case-study-content">
+                            <h3>Adding a powerful new tool to the field mechanic's toolbelt: AI</h3>
+                            <p>Ascendum partnered with McKinsey and Salesforce to give service agents the capabilities and technology to work smarter and faster in addressing customer needs.</p>
+                            <a href="case-study-ai-mechanic.html" class="read-more">Read Case Study <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Case Study 2 -->
+                <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="100">
+                    <div class="case-study-card">
+                        <div class="case-study-image">
+                            <img src="/assets/clustera/images/case-study-2.avif" alt="UAE Bank Analytics">
+                            <div class="case-study-overlay">
+                               
+                            </div>
+                        </div>
+                        <div class="case-study-content">
+                            <h3>How a UAE bank transformed to lead with AI and advanced analytics</h3>
+                            <p>Emirates NBD partnered with McKinsey to identify growth opportunities and expand its talent—becoming an AI and advanced-analytics-driven bank.</p>
+                            <a href="case-study-uae-bank.html" class="read-more">Read Case Study <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Case Study 3 -->
+                <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="200">
+                    <div class="case-study-card">
+                        <div class="case-study-image">
+                            <img src="/assets/clustera/images/case-study-3.jpg" alt="Cybersecurity Solutions">
+                            <div class="case-study-overlay">
+                               
+                            </div>
+                        </div>
+                        <div class="case-study-content">
+                            <h3>Keeping companies safer by matching them with the right cybersecurity providers</h3>
+                            <p>Bosch worked with McKinsey to develop and launch CyberCompare—a cybersecurity purchasing platform to help businesses.</p>
+                            <a href="case-study-cybersecurity.html" class="read-more">Read Case Study <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Case Study 4 -->
+                <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="300">
+                    <div class="case-study-card">
+                        <div class="case-study-image">
+                            <img src="/assets/clustera/images/case-study-4.jpg" alt="Starbucks Design">
+                            <div class="case-study-overlay">
+                                
+                            </div>
+                        </div>
+                        <div class="case-study-content">
+                            <h3>Helping Starbucks design stores that are inclusive for all</h3>
+                            <p>The coffee company worked with McKinsey to create a design framework for more inclusive spaces for persons with disabilities.</p>
+                            <a href="case-study-starbucks.html" class="read-more">Read Case Study <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Additional 4 Case Studies with placeholder content -->
+                <!-- Case Study 5 -->
+                <div class="col-lg-3 col-md-6" data-aos="fade-up">
+                    <div class="case-study-card">
+                        <div class="case-study-image">
+                            <img src="/assets/clustera/images/case-study-5.jpg" alt="Digital Transformation">
+                            <div class="case-study-overlay">
+                                
+                            </div>
+                        </div>
+                        <div class="case-study-content">
+                            <h3>Digital transformation in manufacturing: A success story</h3>
+                            <p>How we helped a leading manufacturer embrace Industry 4.0 technologies to increase efficiency and reduce costs.</p>
+                            <a href="case-study-digital-transformation.html" class="read-more">Read Case Study <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Case Study 6 -->
+                <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="100">
+                    <div class="case-study-card">
+                        <div class="case-study-image">
+                            <img src="/assets/clustera/images/case-study-6.jpg" alt="Healthcare Innovation">
+                            <div class="case-study-overlay">
+                               
+                            </div>
+                        </div>
+                        <div class="case-study-content">
+                            <h3>Revolutionizing healthcare with AI-powered diagnostics</h3>
+                            <p>Partnering with a leading healthcare provider to implement AI solutions for faster and more accurate diagnoses.</p>
+                            <a href="case-study-healthcare.html" class="read-more">Read Case Study <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Case Study 7 -->
+                <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="200">
+                    <div class="case-study-card">
+                        <div class="case-study-image">
+                            <img src="/assets/clustera/images/case-study-7.png" alt="Retail Analytics">
+                            <div class="case-study-overlay">
+                              
+                            </div>
+                        </div>
+                        <div class="case-study-content">
+                            <h3>Transforming retail with advanced analytics</h3>
+                            <p>How we helped a retail giant optimize their inventory and improve customer experience using data analytics.</p>
+                            <a href="case-study-retail.html" class="read-more">Read Case Study <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Case Study 8 -->
+                <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="300">
+                    <div class="case-study-card">
+                        <div class="case-study-image">
+                            <img src="/assets/clustera/images/case-study-8.jpg" alt="Sustainable Energy">
+                            <div class="case-study-overlay">
+                                
+                            </div>
+                        </div>
+                        <div class="case-study-content">
+                            <h3>Sustainable energy solutions for the future</h3>
+                            <p>Supporting a global energy company in their transition to renewable energy sources and sustainable practices.</p>
+                            <a href="case-study-sustainable-energy.html" class="read-more">Read Case Study <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <!-- Brand Section -->
+                <div class="footer-brand">
+                    <h3>CLUSTERA</h3>
+                    <p>Your Gateway to India's Next-Gen Consumers.</p>
+                </div>
+
+                <!-- Company Links -->
+                <div class="footer-links">
+                    <h4>COMPANY</h4>
+                    <ul>
+                        <li><a href="index.html#about">About Us</a></li>
+                        <li><a href="case-studies.html">Case Studies</a></li>
+                        <li><a href="index.html#services">Solutions</a></li>
+                        <li><a href="index.html#contact">Contact Us</a></li>
+                    </ul>
+                </div>
+
+                <!-- Resources Links -->
+                <div class="footer-links">
+                    <h4>RESOURCES</h4>
+                    <ul>
+                        <li><a href="#">Documentation</a></li>
+                        <li><a href="#">Papers</a></li>
+                        <li><a href="#">Press Conferences</a></li>
+                    </ul>
+                </div>
+
+                <!-- Legal Links -->
+                <div class="footer-links">
+                    <h4>LEGAL</h4>
+                    <ul>
+                        <li><a href="#">Terms of Service</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Cookies Policy</a></li>
+                        <li><a href="#">Data Processing</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Footer Bottom -->
+            <div class="footer-bottom">
+                <p>&copy; 2025 Blu Yolk Solutions OPC Private Limited. All rights reserved.</p>
+                <div class="social-links">
+                    <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="social-link"><i class="fab fa-facebook"></i></a>
+                    <a href="#" class="social-link"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script src="assets/clustera/js/main.js"></script>
+</body>
+</html>
