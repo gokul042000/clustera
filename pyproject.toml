@@ -1,0 +1,20 @@
+[project]
+name = "clustera"
+authors = [
+    { name = "meghna chandra", email = "gokul.pillai@clustera.in"}
+]
+description = "Clustera is a youth-focused marketing agency that helps brands connect with the next generation of consumers through data-driven strategies, influencer partnerships, and trend insights. Our platform empowers businesses to craft impactful, relevant campaigns that resonate with young audiences, driving engagement and long-term brand loyalty."
+requires-python = ">=3.10"
+readme = "README.md"
+dynamic = ["version"]
+dependencies = [
+    # "frappe~=15.0.0" # Installed and managed by bench.
+]
+
+[build-system]
+requires = ["flit_core >=3.4,<4"]
+build-backend = "flit_core.buildapi"
+
+# These dependencies are only installed when developer mode is enabled
+[tool.bench.dev-dependencies]
+# package_name = "~=1.1.0"
