@@ -219,22 +219,43 @@
 </head>
 <body class="dark-theme">
     <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg fixed-top navbar-dark">
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
         <div class="container">
-            <a class="navbar-brand d-flex align-items-center" href="index.html">
-                <img src="/assets/clustera/images/Clustera logo - White.png" alt="Clustera Logo" class="navbar-logo me-2">
-                <span></span>
+            <a class="navbar-brand" href="index.html">
+                <img src="/assets/clustera/images/Clustera logo - White.png" 
+                     alt="Clustera Logo" 
+                     class="navbar-logo">
             </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            
+            <!-- Hamburger button -->
+            <button class="navbar-toggler" 
+                    type="button" 
+                    data-bs-toggle="collapse" 
+                    data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" 
+                    aria-expanded="false" 
+                    aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
+    
+            <!-- Nav items -->
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link" href="index.html#home">Home</a></li>
-                    <li class="nav-item"><a class="nav-link" href="index.html#about">About Us</a></li>
-                    <li class="nav-item"><a class="nav-link" href="index.html#services">Solutions</a></li>
-                    <li class="nav-item active"><a class="nav-link" href="case-studies.html">Case Studies</a></li>
-                    <li class="nav-item"><a class="nav-link" href="index.html#contact">Contact Us</a></li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="clustera">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="clustera#about">About Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="clustera#services">Solutions</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="case-studies">Case Studies</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="clustera#contact">Contact Us</a>
+                    </li>
                 </ul>
             </div>
         </div>

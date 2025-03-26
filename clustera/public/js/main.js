@@ -6,41 +6,6 @@ AOS.init({
     offset: 100
 });
 
-// Navbar scroll behavior
-const navbar = document.querySelector('.navbar');
-window.addEventListener('scroll', () => {
-    if (window.scrollY > 50) {
-        navbar.style.padding = '0.5rem 0';
-        navbar.style.backgroundColor = 'rgba(255, 255, 255, 0.98)';
-    } else {
-        navbar.style.padding = '1rem 0';
-        navbar.style.backgroundColor = 'rgba(255, 255, 255, 0.95)';
-    }
-});
-
-// Navbar scroll effect
-window.addEventListener('scroll', function() {
-    const navbar = document.querySelector('.navbar');
-    if (window.scrollY > 0) {
-        navbar.classList.add('scrolled');
-    } else {
-        navbar.classList.remove('scrolled');
-    }
-});
-
-// Smooth scrolling for navigation links
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        const target = document.querySelector(this.getAttribute('href'));
-        if (target) {
-            target.scrollIntoView({
-                behavior: 'smooth',
-                block: 'start'
-            });
-        }
-    });
-});
 
 // Contact form handling
 const contactForm = document.getElementById('contact-form');
@@ -206,22 +171,9 @@ if (logoTrack) {
     });
 }
 
-// Mobile menu toggle
-const navbarToggler = document.querySelector('.navbar-toggler');
-const navbarCollapse = document.querySelector('.navbar-collapse');
 
-if (navbarToggler && navbarCollapse) {
-    navbarToggler.addEventListener('click', () => {
-        navbarCollapse.classList.toggle('show');
-    });
 
-    // Close mobile menu when clicking outside
-    document.addEventListener('click', (e) => {
-        if (!navbarCollapse.contains(e.target) && !navbarToggler.contains(e.target)) {
-            navbarCollapse.classList.remove('show');
-        }
-    });
-}
+
 
 // Remove testimonial slider code
 /* const slides = document.querySelectorAll('.testimonial-slide');
